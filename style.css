@@ -1871,14 +1871,3 @@ button:contains("Продолжить покупки"),
     display: none !important;
 }
 
-/* Или если сердечко это отдельный элемент */
-.favorites-page .empty-favorites .empty-icon {
-    display: none !important;
-}
-
-/* Альтернативный способ - скрыть все сердечки */
-.favorites-page heart,
-.favorites-page .heart-icon,
-.favorites-page [class*="heart"] {
-    display: none !important;
-}
