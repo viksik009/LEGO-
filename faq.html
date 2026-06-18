@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEGO + | Избранное</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <button class="menu-toggle" onclick="toggleMenu()">
+                    <img src="img/icons/list.png" alt="Меню" class="nav-icon">
+                </button>
+                
+                <div id="dropdownMenu" class="simple-dropdown">
+                    <ul class="dropdown-list">
+                        <li><a href="index.html" onclick="toggleMenu()">На главную</a></li>
+                        <li><a href="about.html" onclick="toggleMenu()">О нас</a></li>
+                        <li><a href="contacts.html" onclick="toggleMenu()">Адрес</a></li>
+                        <li><a href="catalog.html" onclick="toggleMenu()">Каталог товаров</a></li>
+                    </ul>
+                </div>
+
+                <a href="index.html" class="logo-link">
+                    <img src="img/logo.png" alt="LEGO+" class="logo-image">
+                </a>
+            </div>
+            <nav class="user-nav">
+
+    <a href="favorites.html" class="fav-icon-wrapper">
+        <img src="img/icons/heart.png" alt="Избранное" class="nav-icon">
+        <span class="fav-count">0</span>
+    </a>
+    
+    <a href="#" onclick="openFeedbackModal(event); return false;">
+        <img src="img/icons/speech.png" alt="Контакты" class="nav-icon">
+    </a>
+    
+    <a href="cart.html" class="cart-icon-wrapper">
+        <img src="img/icons/cart.png" alt="Корзина" class="nav-icon">
+        <span class="cart-count">0</span>
+    </a>
+</nav>
+    </header>
+
+    <main>
+        <section class="faq-page">
+            <div class="container">
+                <h1> Часто задаваемые вопросы</h1>
+                
+                <div class="faq-categories">
+                    <!-- Общие вопросы -->
+                    <div class="faq-category">
+                        <h2>Общие вопросы</h2>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h3>Как сделать заказ?</h3>
+                                <p>Выберите понравившийся набор, нажмите кнопку "В корзину", затем перейдите в корзину и нажмите "Оформить заказ". Заполните форму с контактными данными и выберите способ доставки.</p>
+                           
+                                <h3>Какие способы оплаты вы принимаете?</h3>
+                                
+                                <p>Мы принимаем оплату наличными при получении, банковскими картами.</p>
+                           
+                                <h3>Все ли товары в наличии?</h3>
+                              
+                                <p>Большинство товаров есть в наличии. Актуальную информацию о наличии можно увидеть на странице товара. </p>
+                         
+                                <h3>Сколько времени занимает доставка?</h3>
+                               
+                                <p>Доставка в магазин занимает 1-3 рабочих дня</p>
+                            
+                                <h3>Можно ли заказать доставку на дом?</h3>
+                        
+                                <p>Нет, только самовывоз.</p>
+                        
+                                <h3>Можно ли вернуть товар?</h3>
+                              
+                                <p>Да, вы можете вернуть товар в течение 14 дней с момента покупки при условии сохранения товарного вида, упаковки и всех комплектующих.</p>
+                     
+                                <h3>Что делать, если товар поврежден?</h3>
+                              
+                                <p>Если вы получили поврежденный товар, свяжитесь с нами в течение 24 часов. Мы заменим товар или вернем деньги. Фотографии повреждения ускорят процесс.</p>
+                        
+                                <h3>Все ли наборы оригинальные?</h3>
+                          
+                                <p>Да, мы продаем только оригинальные наборы LEGO от официального производителя. Все товары имеют сертификаты качества.</p>
+                        
+                                <h3>Можно ли купить отдельные детали?</h3>
+                          
+                                <p>В настоящее время мы продаем только полные наборы. Отдельные детали не продаются.</p>
+                    
+                                <h3>Как с вами связаться?</h3>
+                       
+                                <p>Вы можете связаться с нами по телефону +7 (911) 137-40-16, по email support@legoplus.ru или через форму обратной связи на сайте.</p>
+                    
+                                <h3>Какой режим работы магазина?</h3>
+                             
+                                <p>Наш магазин работает ежедневно с 9:00 до 21:00 без выходных и праздников.</p>
+                            </div>
+                        </div>
+                   </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo-section">
+                    <img src="img/logo.png" alt="LEGO+" class="footer-logo">
+                    <p>Официальный магазин конструкторов LEGO</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-link"><img src="img/icons/vk.png" class="social-icon" alt="VK"></a>
+                        <a href="#" class="social-link"><img src="img/icons/max.png" class="social-icon" alt="Max"></a>
+                    </div>
+                </div>
+
+                <div class="footer-links-section">
+                    <h4>Покупателям</h4>
+                    <ul>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="#" onclick="openFeedbackModal(event)">Обратная связь</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact-section">
+                    <h4>Контакты</h4>
+                    <p>г. Санкт-Петербург, пр. Энгельса, д. 129, к. 4</p>
+                    <p>+7 (911) 137-40-16</p>
+                    <p>support@legoplus.ru</p>
+                </div>
+            </div> 
+
+            <div class="footer-bottom">
+                <p>2026 LEGO +</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="feedbackModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeFeedbackModal()">&times;</span>
+            <h2>Обратная связь</h2>
+            <form class="feedback-form" onsubmit="submitFeedback(event)">
+                <div class="form-group">
+                    <label>Ваше имя:</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Сообщение:</label>
+                    <textarea rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            renderFavoritesPage();
+            updateCounters();
+        });
+    </script>
+</body>
+</html>

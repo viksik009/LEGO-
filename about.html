@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEGO + | Официальный магазин конструкторов</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+    <div class="container header-content">
+        <div class="logo">
+
+<button class="menu-toggle" onclick="toggleMenu()">
+    <img src="img/icons/list.png" alt="Меню" class="nav-icon">
+</button>
+
+<div id="dropdownMenu" class="simple-dropdown">
+    <ul class="dropdown-list">
+        <li><a href="index.html" onclick="toggleMenu()">На главную</a></li>
+        <li><a href="about.html" onclick="toggleMenu()">О нас</a></li>
+<li><a href="adress.html" onclick="toggleMenu()">Адрес</a></li>
+    </ul>
+</div>
+
+    <a href="index.html" class="logo-link">
+        <img src="img/logo.png" alt="LEGO+" class="logo-image">
+    </a>
+        </div>
+        
+ <nav class="user-nav">
+
+    <a href="favorites.html" class="fav-icon-wrapper">
+        <img src="img/icons/heart.png" alt="Избранное" class="nav-icon">
+        <span class="fav-count">0</span>
+    </a>
+    
+    <a href="faq.html"><img src="img/icons/speech.png" alt="FAQ" class="nav-icon"></a>
+    
+    <a href="cart.html" class="cart-icon-wrapper">
+        <img src="img/icons/cart.png" alt="Корзина" class="nav-icon">
+        <span class="cart-count">0</span>
+    </a>
+</nav>
+</header>
+
+  <main>
+        <section class="info-page">
+            <div class="container">
+                <h1>О нас</h1>
+                
+                <div class="info-content">
+                    <div class="info-block">
+                        <h2>LEGO+ - официальный магазин конструкторов LEGO</h2>
+                        <p>Мы работаем на рынке с 2025 года и предлагаем только оригинальную продукцию с гарантией качества.</p>
+                    </div>
+                    
+                    <div class="info-block">
+                        <h3>Наша миссия</h3>
+                        <p>Делать мир детства ярче и интереснее с помощью качественных конструкторов LEGO. Мы верим, что игра — это лучший способ развития творческих способностей, логического мышления и воображения.</p>
+                    </div>
+                    
+                     <div class="info-block">
+                        <h3>Почему выбирают нас?</h3>
+                        <ul>
+     <li>Выгодные цены</li>
+     <li>Опытные консультанты</li>
+     <li>Поможем выбрать нужный товар</li>
+     <li>Только новые наборы в ассортименте</li>
+   </ul>
+                  </div>
+                </div>
+            </div>
+        </section>
+    </main> 
+<footer class="footer">
+    <div class="container">
+
+        <div class="footer-top">
+            
+            <div class="footer-logo-section">
+                <img src="img/logo.png" alt="LEGO+" class="footer-logo">
+                <p>Официальный магазин конструкторов LEGO</p>
+                <div class="social-icons">
+                    <a href="#" class="social-link"><img src="img/icons/vk.png" class="social-icon"></a>
+                    <a href="#" class="social-link"><img src="img/icons/max.png" class="social-icon"></a>
+                </div>
+            </div>
+
+            <div class="footer-links-section">
+                <h4>Покупателям</h4>
+                <ul>
+                    <li><a href="#about">О нас</a></li>
+                     <li><a href="#" onclick="openFeedbackModal(event)">Обратная связь</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact-section">
+                <h4>Контакты</h4>
+                <p>г. Санкт-Петербург пр.Энгельса 129к4</p>
+                <p>+7 (911) 137-40-16</p>
+                <p>support@legoplus.ru</p>
+            </div>
+
+        </div> 
+
+        <div class="footer-bottom">
+            <p>2026 LEGO +</p>
+        </div>
+
+    <script src="script.js"></script>
+
+    <!-- Модальное окно обратной связи -->
+<div id="feedbackModal" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeFeedbackModal()">&times;</span>
+        <h2>Обратная связь</h2>
+        <p>Оставьте свой отзыв или задайте вопрос, и мы свяжемся с вами!</p>
+        
+        <form class="feedback-form" onsubmit="submitFeedback(event)">
+            <div class="form-group">
+                <label>Ваше имя:</label>
+                <input type="text" placeholder="Иван Иванов" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" placeholder="example@mail.ru" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Сообщение:</label>
+                <textarea rows="4" placeholder="Текст вашего сообщения..." required></textarea>
+            </div>
+            
+            <button type="submit" class="btn-submit">Отправить сообщение</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

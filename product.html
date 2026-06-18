@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEGO + | Официальный магазин конструкторов</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container header-content">
+        <div class="logo">
+            <!-- Кнопка бургер-меню -->
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <img src="img/icons/list.png" alt="Меню" class="nav-icon">
+            </button>
+            
+            <!-- Выпадающее меню (скрыто по умолчанию) -->
+            <div id="dropdownMenu" class="simple-dropdown">
+                <ul class="dropdown-list">
+                    <li><a href="index.html" onclick="toggleMenu()">Каталог товаров</a></li>
+                    <li><a href="about.html" onclick="toggleMenu()">О нас</a></li>
+                    <li><a href="contacts.html" onclick="toggleMenu()">Адрес</a></li>
+                </ul>
+            </div>
+
+            <!-- Логотип -->
+            <a href="index.html" class="logo-link">
+                <img src="img/logo.png" alt="LEGO+" class="logo-image">
+            </a>
+        </div>
+        
+     <nav class="user-nav">
+    <a href="favorites.html" class="fav-icon-wrapper">
+        <img src="img/icons/heart.png" alt="Избранное" class="nav-icon">
+        <span class="fav-count">0</span>
+    </a>
+    
+    <a href="faq.html"><img src="img/icons/speech.png" alt="FAQ" class="nav-icon"></a>
+    
+    <a href="cart.html" class="cart-icon-wrapper">
+        <img src="img/icons/cart.png" alt="Корзина" class="nav-icon">
+        <span class="cart-count">0</span>
+    </a>
+</nav>
+</header>
+    <main>
+    <section class="product-page">
+        <div class="container">
+
+            <!-- =========================================
+                 ОСНОВНАЯ КАРТОЧКА ТОВАРА
+                 ========================================= -->
+            <div class="product-detail">
+                
+                <!-- Изображение -->
+                <div class="product-images">
+                    <div class="main-image">
+                        <img src="" alt="" id="mainImage">
+                    </div>
+                    <div class="thumbnail-images" id="thumbnailImages">
+                        <!-- Миниатюры будут добавлены через JS -->
+                    </div>
+                </div>
+
+                <!-- Информация о товаре -->
+                <div class="product-info">
+                    <h1 id="productName">Загрузка...</h1>
+                    
+                    <div class="product-rating">
+                        <div class="stars" id="productStars">★★★★★</div>
+                        <span class="reviews-count" id="reviewsCount">(0 отзывов)</span>
+                    </div>
+
+                    <div class="product-price-block">
+                        <div class="price" id="productPrice">0 ₽</div>
+                        <div class="old-price" id="oldPrice"></div>
+                        <div class="discount" id="discount"></div>
+                    </div>
+
+                    <div class="product-details-list">
+                        <div class="detail-item">
+                            <span class="detail-label">Возраст:</span>
+                            <span class="detail-value" id="productAge">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Количество деталей:</span>
+                            <span class="detail-value" id="productPieces">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Артикул:</span>
+                            <span class="detail-value" id="productArticle">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Категория:</span>
+                            <span class="detail-value" id="productCategory">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Наличие:</span>
+                            <span class="detail-value in-stock" id="inStock">В наличии</span>
+                        </div>
+                    </div>
+
+                    <div class="product-description">
+                        <h3>Описание</h3>
+                        <p id="productDescription"></p>
+                    </div>
+
+
+                        <div class="product-buttons">
+                            <button class="btn-fav" onclick="addToFavoritesFromProduct()">В избранное</button>
+                            <button class="btn-buy" onclick="addToCartFromProduct()">В корзину</button>
+                        </div>
+                    </div>
+                </div> <!-- ЗАКРЫВАЕМ product-info -->
+            </div> <!-- ЗАКРЫВАЕМ product-detail -->
+
+            <!-- =========================================
+                 ПОХОЖИЕ ТОВАРЫ - ОТДЕЛЬНЫЙ БЛОК
+                 ========================================= -->
+            <div class="related-products">
+                <h2>Похожие товары</h2>
+                <div class="products-grid" id="relatedProductsGrid"></div>
+            </div>
+
+            <!-- =========================================
+                 ОТЗЫВЫ - ОТДЕЛЬНЫЙ БЛОК
+                 ========================================= -->
+          <div class="reviews-list" id="reviewsList">
+    <!-- Пример отзыва 1 -->
+    <div class="review-item">
+        <div class="review-header">
+            <div>
+                <div class="review-author">Александр Петров</div>
+                <div class="review-rating">★★★★★</div>
+            </div>
+            <div class="review-date">15 января 2026</div>
+        </div>
+        <div class="review-text">
+            Отличный набор! Собирали всей семьёй, очень понравилось качество деталей. 
+            Рекомендую всем фанатам LEGO!
+        </div>
+    </div>
+    
+    <!-- Пример отзыва 2 -->
+    <div class="review-item">
+        <div class="review-header">
+            <div>
+                <div class="review-author">Мария Иванова</div>
+                <div class="review-rating">★★★★★</div>
+            </div>
+            <div class="review-date">10 января 2026</div>
+        </div>
+        <div class="review-text">
+            Подарили сыну на день рождения. Он в восторге! Детали качественные, 
+            инструкция понятная. Доставка быстрая. Спасибо магазину!
+        </div>
+    </div>
+</div>
+                <div class="add-review">
+                    <h3>Оставить отзыв</h3>
+                    <form class="review-form" onsubmit="submitReview(event)">
+                        <div class="form-group">
+                            <label>Ваше имя:</label>
+                            <input type="text" required placeholder="Иван Иванов">
+                        </div>
+                        <div class="form-group">
+                            <label>Оценка:</label>
+                            <div class="rating-input">
+                                <span class="star" onclick="setRating(1)">★</span>
+                                <span class="star" onclick="setRating(2)">★</span>
+                                <span class="star" onclick="setRating(3)">★</span>
+                                <span class="star" onclick="setRating(4)">★</span>
+                                <span class="star" onclick="setRating(5)">★</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Отзыв:</label>
+                            <textarea rows="4" required placeholder="Расскажите о вашем опыте использования..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Отправить отзыв</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+    
+        <div class="footer-top">
+            
+            <div class="footer-logo-section">
+                <img src="img/logo.png" alt="LEGO+" class="footer-logo">
+                <p>Официальный магазин конструкторов LEGO</p>
+                <div class="social-icons">
+                    <a href="#" class="social-link"><img src="img/icons/vk.png" class="social-icon"></a>
+                    <a href="#" class="social-link"><img src="img/icons/max.png" class="social-icon"></a>
+                </div>
+            </div>
+
+            <div class="footer-links-section">
+                <h4>Покупателям</h4>
+                <ul>
+                    <li><a href="#about">О нас</a></li>
+                     <li><a href="#" onclick="openFeedbackModal(event)">Обратная связь</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact-section">
+                <h4>Контакты</h4>
+                <p>г. Санкт-Петербург пр.Энгельса 129к4</p>
+                <p>+7 (911) 137-40-16</p>
+                <p>support@legoplus.ru</p>
+            </div>
+
+        </div> 
+
+        <div class="footer-bottom">
+            <p>2026 LEGO +</p>
+        </div>
+
+    <script src="script.js"></script>
+
+    <!-- Модальное окно обратной связи -->
+<div id="feedbackModal" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeFeedbackModal()">&times;</span>
+        <h2>Обратная связь</h2>
+        <p>Оставьте свой отзыв или задайте вопрос, и мы свяжемся с вами!</p>
+        
+        <form class="feedback-form" onsubmit="submitFeedback(event)">
+            <div class="form-group">
+                <label>Ваше имя:</label>
+                <input type="text" placeholder="Иван Иванов" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" placeholder="example@mail.ru" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Сообщение:</label>
+                <textarea rows="4" placeholder="Текст вашего сообщения..." required></textarea>
+            </div>
+            
+            <button type="submit" class="btn-submit">Отправить сообщение</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
